@@ -1,6 +1,16 @@
 {
   "name": "crivo-indica-site",
   "compatibility_date": "2026-07-31",
+  "routes": [
+    {
+      "pattern": "crivoindica.com.br",
+      "custom_domain": true
+    },
+    {
+      "pattern": "www.crivoindica.com.br",
+      "custom_domain": true
+    }
+  ],
   "assets": {
     "directory": "./",
     "not_found_handling": "404-page"
