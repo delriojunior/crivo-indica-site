@@ -14,9 +14,19 @@ updateStickyCta();
 document.querySelectorAll('[data-group]').forEach((link) => {
   link.addEventListener('click', () => {
     const group = link.dataset.group;
+    const eventId = `group-${group}-${Date.now()}-${crypto.randomUUID()}`;
+
     if (typeof window.fbq === 'function') {
-      window.fbq('trackCustom', 'WhatsAppGroupClick', { group });
+      window.fbq('track', 'Lead', { content_name: `WhatsApp: ${group}` }, { eventID: eventId });
     }
+
+    fetch('/api/meta-conversion', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ group, eventId }),
+      keepalive: true,
+    }).catch(() => {});
+
     window.dispatchEvent(new CustomEvent('crivo:group-click', { detail: { group } }));
   });
 });
