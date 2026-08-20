@@ -38,7 +38,7 @@ em { color: var(--teal-light); font-style: normal; }
 .section-heading { max-width: 600px; margin-bottom: 28px; }
 .section-heading h2, .about h2, .closing h2 { font-size: clamp(32px, 7vw, 53px); line-height: 1.05; letter-spacing: -.035em; margin: 10px 0 13px; }
 .section-heading p, .closing p { color: var(--muted); line-height: 1.5; margin: 0; }
-.group-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.group-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
 .group-card { min-height: 315px; display: flex; flex-direction: column; padding: 22px; border: 1px solid var(--line); border-radius: 24px; background: linear-gradient(145deg, rgba(25, 40, 69, .98), rgba(15, 29, 54, .98)); box-shadow: var(--shadow); }
 .group-card.featured { border-color: rgba(0, 191, 166, .34); }
 .card-top { min-height: 38px; display: flex; align-items: flex-start; justify-content: space-between; }

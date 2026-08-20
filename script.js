@@ -14,6 +14,9 @@ updateStickyCta();
 document.querySelectorAll('[data-group]').forEach((link) => {
   link.addEventListener('click', () => {
     const group = link.dataset.group;
+    if (typeof window.fbq === 'function') {
+      window.fbq('trackCustom', 'WhatsAppGroupClick', { group });
+    }
     window.dispatchEvent(new CustomEvent('crivo:group-click', { detail: { group } }));
   });
 });
